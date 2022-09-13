@@ -1,0 +1,385 @@
+:root {
+  /* Colors */
+  --color__body-bg: #f9f7f6;
+  --color__body-fg: #404040;
+  --color__body-fg--light: #6f6f6f;
+  --color__link__static: #00568A;
+  --color__link__hover: #022843;
+  --color__link__border__static: #ffcf3d;
+  --color__link__border__hover: #F57C13;
+  --color__mark: #fee091;
+  --color__mark__hover: #c1dcbd;
+  --color__border--light: #e3e3e3;
+
+  /* Fonts */
+  --ff__body-default: sans-serif;
+  --ff__body-alt: serif;
+  --fw__body-default: 400;
+  --fs__h1: clamp(1.75rem, 0.9166rem + 2.7778vw, 3rem);
+
+  /* Spacing */
+  --sp__spacer-sm: clamp(0.5rem, 0.1666rem + 1.1112vw, 1rem);
+  --sp__spacer-md: clamp(1rem, 0.3332rem + 2.2223vw, 2rem);
+  --sp__spacer-lg: clamp(2rem, 0.6667rem + 4.4445vw, 4rem);
+
+  /* Other */
+  --transition__base: all 250ms ease-in-out;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  min-width: 320px;
+  text-rendering: optimizeSpeed;
+
+  background-color: var(--color__body-bg);
+  color: var(--color__body-fg);
+  font-family: var(--ff__body-default);
+  padding: var(--sp__spacer-md);
+  text-align: left;
+}
+
+@media (min-width: 47em) {
+  body {
+    text-rendering: optimizeLegibility;
+  }
+}
+
+body,
+textarea,
+button {
+  font-size: 100%;
+  font-weight: var(--fw__body-default);
+  line-height: 1.4;
+}
+
+/* Make spacing browser consistent on ul, ol elements */
+ul,
+ol {
+  margin: 0 0 0 1.5rem;
+  padding: 0;
+}
+
+nav ul, 
+nav ul ul {
+  list-style: none;
+  margin-left: 0;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Generic Anchor style */
+a {
+  background-image: linear-gradient(180deg,transparent 45%, var(--color__link__border__static) 0);
+  background-size: 100% 200%;
+  background-position: top;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  color: var(--color__link__static);
+  margin: 0 -0.125em;
+  padding: 0.125em 0.25em;
+  text-decoration: none;
+  text-decoration-skip-ink: auto;
+  transition: var(--transition__base);
+  -webkit-text-decoration-skip: objects;
+}
+a:hover,
+a:focus {
+  background-position: bottom;
+  color: var(--color__link__hover);
+  text-decoration: none;
+}
+
+a:focus {
+  outline: 2px solid var(--color__link__border__hover);
+  outline-offset: 2px;
+}
+  
+nav a {
+  display: block;
+  text-decoration: none;
+}
+
+/* And undo these styles for placeholder links/named anchors (without href)
+   which have not been made explicitly keyboard-focusable (without tabindex).
+   See https://github.com/twbs/bootstrap/issues/19402 */
+a:not([href]):not([tabindex]) {
+  color: inherit;
+  text-decoration: none;
+}
+a:not([href]):not([tabindex]):hover,
+a:not([href]):not([tabindex]):focus {
+  color: inherit;
+  text-decoration: none;
+}
+a:not([href]):not([tabindex]):focus {
+  outline: 0;
+}
+
+/* Suppress the focus outline on elements that cannot be accessed via keyboard.
+   This prevents an unwanted focus outline from appearing around elements that
+   might still respond to pointer events.
+   Credit: https://github.com/suitcss/base */
+[tabindex="-1"]:focus {
+  outline: 0 !important;
+}
+
+/* Color when text is highlighted */
+::selection {
+  background-color: var(--color__body-fg);
+  box-decoration-break: clone;
+  color: var(--color__body-bg);
+}
+
+mark {
+  background-color: var(--color__mark);
+  display: inline-block;
+  padding: 0.125em 0.25em;
+}
+.exclusive::after {
+  background-color: var(--color__mark__hover); 
+  content: attr(title);
+  font-family: var(--ff__body-alt);
+  font-style: italic;
+  opacity: 0;
+  padding: var(--sp__spacer-sm);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: var(--transition__base); 
+  transform: translateY(-100%);
+}
+.exclusive:hover,
+.exclusive:focus {
+  background-color: var(--color__mark__hover);
+  cursor: pointer;
+}
+.exclusive:hover::after,
+.exclusive:focus::after {
+  opacity: 1;
+}
+
+/* - - - - - - - -
+   LAYOUT
+   - - - - - - - - */
+
+.l__wrapper {}
+.l__title {
+  font-size: var(--fs__h1);
+  font-weight: lighter;
+}
+.l__descript {
+  font-family: var(--ff__body-alt);
+  padding-bottom: var(--sp__spacer-lg);
+}
+.l__input {
+  padding-bottom: var(--sp__spacer-lg);
+}
+.l__input button {
+  background-color: transparent;
+  border: 2px solid var(--color__body-fg--light);
+  color: var(--color__body-fg--light);
+  font-size: 93.75%;
+  font-weight: bold;
+  padding: 0.5em 1em;
+  transition: var(--transition__base);
+}
+.l__input button:hover {
+  background-color: var(--color__mark);
+  color: var(--color__body-fg);
+}
+.l__output {
+  padding-bottom: var(--sp__spacer-lg);
+}
+.l__sources {
+  padding-bottom: var(--sp__spacer-lg);
+  max-width: 92ch;
+}
+.l__wrapper > footer {
+  border-top: 1px solid var(--color__border--light);
+  color: var(--color__body-fg--light);
+  margin-top: var(--sp__spacer-md);
+  padding-top: var(--sp__spacer-md);
+}
+
+/* 760px breakpoint */
+@media (min-width: 47.5em) {
+  .l__input-output {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: stretch; /* vertical */
+    justify-content: space-between; /* horizontal */
+  }
+  .l__input-output > .l__input,
+  .l__input-output > .l__output {
+    flex: 1 1 50%;
+  }
+  .l__input-output > .l__input {
+    padding-right: calc(var(--sp__spacer-md) * 0.5);
+  }
+  .l__input-output > .l__output {
+    padding-left: calc(var(--sp__spacer-md) * 0.5);
+  }
+}
+/* 992px breakpoint */
+@media (min-width: 62em) {
+  .l__wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: stretch; /* vertical */
+    justify-content: space-between; /* horizontal */
+  }
+  .l__title,
+  footer {
+    flex: 1 0 calc(100% - 15rem);
+    margin-left: 15rem;
+  }
+  .l__title {
+    padding-bottom: var(--sp__spacer-lg);
+  }
+  .l__descript {
+    flex: 1 0 15rem;
+    padding-right: var(--sp__spacer-md);
+  }
+  .l__descript p {
+    padding-top: var(--sp__spacer-sm);
+  }
+  .l__input-output {
+    flex: 1 0 calc(100% - 15rem);
+  }
+}
+
+/* - - - - - - - -
+ Components
+ - - - - - - - - */
+
+.display__input,
+.display__output {
+  background-color: #fff;
+  border: 1px solid var(--color__border--light);
+  min-height: 16em;
+  padding: var(--sp__spacer-sm);
+  width: 100%;
+}
+.display__output {}
+@media (min-width: 47.5em) {
+  .display__input,
+  .display__output {
+    min-height: 20em;
+  }
+}
+@media (min-width: 62em) {
+  .display__input,
+  .display__output {
+    min-height: 24em;
+  }
+}
+
+label {
+  background-color: var(--color__border--light);
+  display: inline-block;
+  font-size: 87.5%;
+  font-family: monospace;
+  letter-spacing: 0.125em;
+  padding: 0.25em 1em;
+  text-transform: uppercase;
+}
+.l__descript label {
+  opacity: 0;
+}
+.l__sources label {
+  margin-bottom: var(--sp__spacer-sm);
+}
+
+.display__input {
+  color: var(--color__body-fg--light);
+}
+.display__output {
+  position: relative;
+}
+
+.counters {
+  list-style: none;
+  margin: 0;
+}
+.counters li {
+  background-color: rgba(255,255,255,0.67);
+  border: 1px solid var(--color__border--light);
+  border-top: 0;
+  color: var(--color__body-fg--light);
+  font-family: var(--ff__body-alt);
+  letter-spacing: 0.03125em;
+  padding: var(--sp__spacer-sm);
+}
+@media (min-width: 30em) {
+  .counters {
+    display: flex;
+    flex-flow: row nowrap;
+    align-content: flex-start;
+    justify-content: flex-start;
+  }
+  .counters li {
+    margin-right: -1px;
+  }
+}
+.counters b {
+  font-family: var(--ff__body-default);
+}
+#countExclusive {
+  background-color: transparent;
+  color: var(--color__body-fg);
+  position: relative;
+}
+#countExclusive::before {
+  background-color: var(--color__mark);
+  content: '';
+  opacity: 0.67;
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+#more-detail {
+  font-size: 93.75%;
+}
+#more-detail li {
+  margin-bottom: calc(var(--sp__spacer-sm));
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

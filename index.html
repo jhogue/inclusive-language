@@ -1,0 +1,61 @@
+<!doctype HTML>
+<html lang="en">
+  <head>
+    <title>Inclusive Language Checker</title>
+    <meta name="description" content="A tool to check strings of text for exclusive language, highlight them, and suggest alternate language that is more inclusive.">
+
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+  </head>
+  <body class="no-js">
+
+    <div class="l__wrapper">
+      <h1 class="l__title">Inclusive Language Checker</h1>
+
+      <section class="l__descript">
+        <label for="description">Description</label>
+        <p id="description">A tool to check strings of text for exclusive language, highlight them, and suggest alternate language that is more inclusive.</p>
+        <p>Copy and paste text into the Input box, click the button to submit, and then review the suggestions.</p>
+      </section>
+
+      <div class="l__input-output">
+        <section class="l__input">
+          <!-- Sample input text is added here and then can be manipulated after page load -->
+          <label for="input-area">Input</label>
+          <textarea class="display__input" name="" id="input-area">Avoid gendered pronouns like he and she unless you are sure how someone identifies. As for someone’s preferred pronouns before using them. 
+Stop using phrases like the opposite sex, it suggests there is only the binary. The phrase “biological” men or women is hurtful because it suggests there are  gender experiences that are more normal than others. Born a woman is the same thing. And don’t use someone’s dead name with phrases like [he/she/they] went by.
+Empty lines throw an error :(.</textarea>
+          <button onclick="inclusiveFormat()">Suggest Inclusive Language</button>
+        </section>
+
+        <section class="l__output">
+          <label for="output">Output</label>
+          <div class="display__output" id="output"></div>
+          <ul class="counters">
+            <li id="countExclusive">Exclusive words/phrases count</li>
+            <li id="countWords">Word count</li>
+            <li id="countSentences">Sentence count</li>
+            <li id="countParagraphs">Paragraph count</li>
+          </ul>
+        </section>
+
+        <aside class="l__sources">
+          <label for="more-detail">Sources</label>
+          <ol id="more-detail">
+            <li>When text is scanned for exclusive words or phrases, additional information will display in this location for further reading and education about the topics highlighted.</li>
+          </ol>
+        </aside>
+      </div>
+      
+      <footer>
+        <p><small>By J. Hogue as part of the <a href="https://www.designxri.com" target="_blank">DesignXRI Equity program</a>. Many thanks to all language suggestion sources. Contribute to <a href="https://github.com/jhogue/inclusive-language" target="_blank">the project on GitHub</a>.</small></p>
+      </footer>
+    </div>
+
+    <script defer src="library.js"></script>
+    <script defer src="script.js"></script>
+  </body>
+</html>
