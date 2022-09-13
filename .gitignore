@@ -1,3 +1,8 @@
+.DS_Store
+*/.DS_Store
+
+.nova/
+
 .sass-cache/
 *.css.map
 *.sass.map
