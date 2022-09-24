@@ -374,6 +374,14 @@ label {
   margin-bottom: calc(var(--sp__spacer-sm));
 }
 
+footer i {
+  font-family: var(--ff__body-alt);
+  letter-spacing: 0.0625em;
+}
+footer p + p {
+  margin-top: 1.5em;
+}
+
 /* Remove all animations and transitions for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   * {

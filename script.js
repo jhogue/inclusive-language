@@ -28,6 +28,9 @@ document.addEventListener("DOMContentLoaded", function() {
       // Remove duplicate values by creating a set
       let moreDetails = [...new Set(data.source)];
       document.querySelector("#more-detail").innerHTML = moreDetails.join('');
+      document.querySelector(
+        "#libraryTotal"
+      ).innerHTML = '| ' + exclusiveWords.length + ' words/phrases in the Library';
     }
 
     // Output a title case string
@@ -58,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function() {
         // Perform a quick check to see if there is at least one match
         // Returns the first character position if found, -1 if not found
         sentLower = sent.toLowerCase();
-        if (sentLower.includes(search)) {
+        if (sentLower.includes(search.toLowerCase())) {
           // Use RegEx to find ALL occurrences at a word boundary (b), globally (g), without case sensitivity (i)
           let indexes = [...sent.matchAll(new RegExp(`\\b${search}\\b`, 'gi'))];
           // Reverse the array so we start from the end of the string
