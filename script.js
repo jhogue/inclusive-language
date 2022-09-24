@@ -38,8 +38,16 @@ document.addEventListener("DOMContentLoaded", function() {
       return str.charAt(0).toUpperCase() + str.slice(1);
     }
 
+    function replaceHyphenWithSpace(str) {
+      return str.replace('-', ' ');
+    };
+
+    function replaceSpaceWithHyphen(str) {
+      return str.replace(/\s+/g, '-');
+    };
+
     function getSentenceFromParagraph(p) {
-      // Find sentences and account for edge cases where they end in more than one punctuation mark or in quotes or parentheticals
+      // Find sentences and account for edge cases where they end in more than one punctuation mark or in quotes or parenthetical
       // Regex pattern from James at https://stackoverflow.com/a/72280712/479663
       let sentences = p
         .match(/(?=[^])(?:\P{Sentence_Terminal}|\p{Sentence_Terminal}(?!['"`\p{Close_Punctuation}\p{Final_Punctuation}\s]))*(?:\p{Sentence_Terminal}+['"`\p{Close_Punctuation}\p{Final_Punctuation}]*|$)/guy)
@@ -52,18 +60,34 @@ document.addEventListener("DOMContentLoaded", function() {
       // This is the whole sentence string we are checking per word in our array. As we add more and more words/phrases, does this get too costly?
 
       // For each exclusive word in the array of words to check, see if there is a match in the sentence string
+      // (is there a more performant way to do this?)
       for (let i=0; i < exclusiveWords.length; i++) {
         let search = exclusiveWords[i][0];
+        let searchWithHyphen = replaceSpaceWithHyphen(search).toLowerCase();
+        let searchNoHyphen = replaceHyphenWithSpace(search).toLowerCase();
         let replace = exclusiveWords[i][1];
         let explain = exclusiveWords[i][2];
         let source = exclusiveWords[i][3];
 
         // Perform a quick check to see if there is at least one match
         // Returns the first character position if found, -1 if not found
+        let matchMade = false;
+        let searchMatch = search;
         sentLower = sent.toLowerCase();
-        if (sentLower.includes(search.toLowerCase())) {
+        if (sentLower.includes(searchWithHyphen)) {
+          matchMade = true;
+          searchMatch = searchWithHyphen;
+        }
+        if (sentLower.includes(searchNoHyphen)) {
+          matchMade = true;
+          searchMatch = searchNoHyphen;
+        }
+        //console.log('sentLower = ' + sentLower);
+        //console.log('search = ' + search);
+        //console.log('searchNoPunct = ' + searchNoPunct);
+        if (matchMade == true) {
           // Use RegEx to find ALL occurrences at a word boundary (b), globally (g), without case sensitivity (i)
-          let indexes = [...sent.matchAll(new RegExp(`\\b${search}\\b`, 'gi'))];
+          let indexes = [...sent.matchAll(new RegExp(`\\b${searchMatch}\\b`, 'gi'))];
           // Reverse the array so we start from the end of the string
           // This avoids a problem with the same word in the same sentence more than once. Starting from the front, the first replacement changes the character position of the next replacement. Starting from the end keeps the character numeric positions intact when counting from the beginning of the string
           indexes.reverse().forEach(indexData => {
