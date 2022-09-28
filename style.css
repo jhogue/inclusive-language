@@ -223,11 +223,9 @@ mark {
   padding-bottom: var(--sp__spacer-lg);
   max-width: 92ch;
 }
-.l__wrapper > footer {
-  border-top: 1px solid var(--color__border--light);
+.l__footer {
   color: var(--color__body-fg--light);
   margin-top: var(--sp__spacer-md);
-  padding-top: var(--sp__spacer-md);
 }
 
 /* 760px breakpoint */
@@ -258,7 +256,7 @@ mark {
     justify-content: space-between; /* horizontal */
   }
   .l__title,
-  footer {
+  .l__footer {
     flex: 1 0 calc(100% - 15rem);
     margin-left: 15rem;
   }
@@ -272,7 +270,7 @@ mark {
   .l__descript p {
     padding-top: var(--sp__spacer-sm);
   }
-  .l__input-output {
+  .l__main {
     flex: 1 0 calc(100% - 15rem);
   }
 }
@@ -367,18 +365,33 @@ label {
   z-index: -1;
 }
 
-#more-detail {
-  font-size: 93.75%;
+#more-detail {}
+#more-detail li,
+details li {
+  margin-bottom: var(--sp__spacer-sm);
 }
-#more-detail li {
-  margin-bottom: calc(var(--sp__spacer-sm));
+#more-detail li:last-child,
+details li:last-child {
+  margin-bottom: 0;
 }
 
-footer i {
+details {
+  border: 1px solid var(--color__border--light);
+  margin-bottom: var(--sp__spacer-md);
+}
+details ul,
+summary {
+  padding: var(--sp__spacer-sm);
+}
+
+.l__footer i {
   font-family: var(--ff__body-alt);
   letter-spacing: 0.0625em;
 }
-footer p + p {
+.l__footer p {
+  max-width: 100ch;
+}
+.l__footer p + p {
   margin-top: 1.5em;
 }
 

@@ -15,45 +15,54 @@
     <div class="l__wrapper">
       <h1 class="l__title">Exclusive Language Highlighter</h1>
 
-      <section class="l__descript">
+      <article class="l__descript">
         <label for="description">Description</label>
         <p id="description">A tool to check strings of text for exclusive language, highlight them, and suggest alternate language that is more inclusive.</p>
         <p>Copy and paste text into the Input box, press the button to submit, and then review the suggestions. This tool does not make corrections for you, but rather, highlights words or phrases to consider changing and why.</p>
-      </section>
+      </article>
 
-      <div class="l__input-output">
-        <section class="l__input">
-          <!-- Sample input text is added here and then can be manipulated after page load -->
-          <label for="input-area">Input</label>
-          <textarea class="display__input" name="" id="input-area">Avoid gendered pronouns like he and she unless you are sure how someone identifies. As for someone’s preferred pronouns before using them. 
+      <main class="l__main" id="content">
+        <article class="l__input-output">
+          <section class="l__input">
+            <!-- Sample input text is added here and then can be manipulated after page load -->
+            <label for="input-area">Input</label>
+            <textarea class="display__input" name="" id="input-area">Avoid gendered pronouns like he and she unless you are sure how someone identifies. As for someone’s preferred pronouns before using them. 
 Stop using phrases like the opposite sex, it suggests there is only the binary. The phrase “biological” men or women is hurtful because it suggests there are  gender experiences that are more normal than others. Born a woman is the same thing. And don’t use someone’s dead name with phrases like [he/she/they] went by.
 Marketers use the phrase target audience quite a bit, and may not realize it has violent undertones. 
-Gender is a personal and societal construct, not one which is absolute based on whether someone was born male or born a girl.
+Gender is a personal and societal construct, not one which is absolute based on whether someone was born male or born a girl. The house has a master bedroom with master bath. Mr. So and So is a crazy person. 
 Generally checking if new term highlighting is working like able bodied or acting gay or being abnormal or African-American or how about A.D. 2500 AD 2500. 
-Empty lines throw an error :(.</textarea>
-          <button onclick="inclusiveFormat()">Suggest Inclusive Language</button>
-        </section>
-
-        <section class="l__output">
-          <label for="output">Output</label>
-          <div class="display__output" id="output"></div>
-          <ul class="counters">
-            <li id="countExclusive">Exclusive words/phrases count</li>
-            <li id="countWords">Word count</li>
-            <li id="countSentences">Sentence count</li>
-            <li id="countParagraphs">Paragraph count</li>
+Empty lines throw an error :(. I can’t believe someone would still use the word Negro.</textarea>
+            <button onclick="inclusiveFormat()">Suggest Inclusive Language</button>
+          </section>
+  
+          <section class="l__output">
+            <label for="output">Output</label>
+            <div class="display__output" id="output"></div>
+            <ul class="counters">
+              <li id="countExclusive">Exclusive words/phrases count</li>
+              <li id="countWords">Word count</li>
+              <li id="countSentences">Sentence count</li>
+              <li id="countParagraphs">Paragraph count</li>
+            </ul>
+          </section>
+  
+          <aside class="l__sources">
+            <label for="more-detail">Sources <span id="libraryTotal"></span></label>
+            <ol id="more-detail">
+              <li>When text is scanned for exclusive words or phrases, additional information will display in this location for further reading and education about the topics highlighted.</li>
+            </ol>
+          </aside>
+        </article>
+      </main>
+  
+      <footer class="l__footer">
+        <details>
+          <summary>Major sources and additional reading</summary>
+          <ul>
+            <li><a href="https://www.diversitystyleguide.com" target="_blank">The Diversity Style Guide</a>: Built for journalists but full of useful phrases to be aware of.</li>
+            <li><a href="https://sites.google.com/brandeis.edu/parcsuggestedlanguagelist/categories" target="_blank">Suggested Language List from Brandeis University</a>: A student-led project at the Prevention, Advocacy & Resource Center focused on violent language.</li>
           </ul>
-        </section>
-
-        <aside class="l__sources">
-          <label for="more-detail">Sources <span id="libraryTotal"></span></label>
-          <ol id="more-detail">
-            <li>When text is scanned for exclusive words or phrases, additional information will display in this location for further reading and education about the topics highlighted.</li>
-          </ol>
-        </aside>
-      </div>
-      
-      <footer>
+        </details>
         <p><i>What is this?</i> This is an educational tool that helps people become more mindful about their words, because <b>words matter</b>. Many words in this database may not be hurtful, upsetting, retraumatizing, or offensive to many people — but they might be to some. You’re not a bad person if you have used some language highlighted here, but if you have the cognitive/language privilege to adjust and learn, it’s worthwhile to consider becoming more aware/conscious of how everyday language helps perpetuate racism, sexism, genderism, ageism, and ableist ideas.</p>
         <p><small>By J. Hogue as part of the <a href="https://www.designxri.com" target="_blank">DesignXRI Equity program</a>. Many thanks to all language suggestion sources. Contribute to <a href="https://github.com/jhogue/inclusive-language" target="_blank">the project on GitHub</a>.</small></p>
       </footer>
