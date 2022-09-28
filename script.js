@@ -93,7 +93,16 @@ document.addEventListener("DOMContentLoaded", function() {
           indexes.reverse().forEach(indexData => {
             // The brackets turn the match value into its key position? Sorcery!
             let {index} = indexData;
-            sent = sent.slice(0, index) + `<mark class="exclusive" title="${sentenceCase(search)}: ${explain + ' Consider “' + replace + '”'}" data-replace="${replace}" tabindex="0">${indexData}</mark>` + sent.slice(index + search.length);
+            let explainPhrase = '';
+            // If [remove/rephrase] do something different
+            if ( replace == '[consider context]' ) {
+              explainPhrase = explain + ' Consider the context.';
+            } else if ( replace == '[remove/rephrase]' ) {
+              explainPhrase = explain + ' Rephrase or remove.';
+            } else {
+              explainPhrase = explain + ' Consider “' + replace + '”';
+            }
+            sent = sent.slice(0, index) + `<mark class="exclusive" title="${sentenceCase(search)}: ${explainPhrase}" data-replace="${replace}" tabindex="0">${indexData}</mark>` + sent.slice(index + search.length);
             data.exclusive += 1;
             if ( source ) {
               data.source.push('<li>' + sentenceCase(search) + ': ' + source + '</li>');
