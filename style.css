@@ -196,6 +196,13 @@ mark {
   font-size: var(--fs__h1);
   font-weight: lighter;
 }
+.l__title small {
+  background-color: #fff;
+  display: inline-block;
+  font-size: 0.375em;
+  padding: 0.1875em 0.5em;
+  text-transform: uppercase;
+}
 .l__descript {
   font-family: var(--ff__body-alt);
   padding-bottom: var(--sp__spacer-lg);

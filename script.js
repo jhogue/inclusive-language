@@ -74,6 +74,10 @@ document.addEventListener("DOMContentLoaded", function() {
         let matchMade = false;
         let searchMatch = search;
         sentLower = sent.toLowerCase();
+        if (sentLower.includes(search)) {
+          matchMade = true;
+          searchMatch = search;
+        }
         if (sentLower.includes(searchWithHyphen)) {
           matchMade = true;
           searchMatch = searchWithHyphen;

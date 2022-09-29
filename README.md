@@ -41,4 +41,6 @@ Create a [Pull Request](https://github.com/jhogue/inclusive-language/pulls) (PR)
 Created by [J. Hogue](https://oomphinc.com/our-people/j-hogue) as part of the [DesignXRI EQUITYxRI](https://www.designxri.com/learn/equityxdesign/) cohort in 2022. Thanks to all the public resources, including, but not limited to: 
 
 + [The Diversity Style Guide](https://www.diversitystyleguide.com)
++ [The Inclusive Style Guide](https://nasaa-arts.org/nasaa_research/inclusive-language-guide/)
++ [Language Please](https://languageplease.org)
 + [Suggested Language List from Brandeis University](https://sites.google.com/brandeis.edu/parcsuggestedlanguagelist/categories)
