@@ -331,6 +331,10 @@ label {
   position: relative;
 }
 
+.display__output p {
+  margin-bottom: var(--sp__spacer-sm);
+}
+
 .counters {
   list-style: none;
   margin: 0;

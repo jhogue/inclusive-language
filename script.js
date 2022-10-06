@@ -47,6 +47,9 @@ document.addEventListener("DOMContentLoaded", function() {
     };
 
     function getSentenceFromParagraph(p) {
+      if (p === '') {
+        return [];
+      }
       // Find sentences and account for edge cases where they end in more than one punctuation mark or in quotes or parenthetical
       // Regex pattern from James at https://stackoverflow.com/a/72280712/479663
       let sentences = p
