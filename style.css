@@ -8,6 +8,7 @@
   --color__link__border__static: #ffcf3d;
   --color__link__border__hover: #F57C13;
   --color__mark: #ffef45;
+  --color__mark--trans: rgba(255,239,69,0.67);
   --color__mark__hover: #d2ebce;
   --color__border--light: #e3e3e3;
 
@@ -163,6 +164,11 @@ mark {
   display: inline-block;
   padding: 0.125em 0.25em;
 }
+
+h1 mark {
+  background-color: var(--color__mark--trans);
+}
+
 .exclusive::after {
   background-color: var(--color__mark__hover); 
   content: attr(title);
@@ -329,6 +335,9 @@ label {
 }
 .display__output {
   position: relative;
+}
+.display__output p {
+  margin-bottom: 1em;
 }
 
 .display__output p {

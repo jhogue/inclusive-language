@@ -157,7 +157,11 @@ document.addEventListener("DOMContentLoaded", function() {
       let outputArea = document.getElementById("output");
       let text = inputArea.value;
 
-      // First break into paragraphs
+      // First, remove double returns
+      // Credit https://stackoverflow.com/questions/22962220/remove-multiple-line-breaks-n-in-javascript
+      text = text.replace(/[\r\n]{2,}/g, "\n");
+
+      // Then break into paragraphs
       let paragraphs = text.split("\n");
       data.paragraphs = paragraphs.length;
       //console.log('Paragraphs:');
