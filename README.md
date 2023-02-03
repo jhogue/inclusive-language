@@ -45,3 +45,7 @@ Created by [J. Hogue](//oomphinc.com/our-people/j-hogue) as part of the [DesignX
 + [Language Please](//languageplease.org)
 + [Suggested Language List from Brandeis University](//sites.google.com/brandeis.edu/parcsuggestedlanguagelist/categories)
 + [The Retext plugin on Github](//github.com/retextjs/retext-equality#related)
+
+## Similar Projects
+
++ [AlexJS.com](//alexjs.com) — An online implementation of [ReText Equality](//github.com/retextjs/retext-equality), a similar library of phrases to scan passages of text for. Available via the command line and used in other plug-ins and integrations.

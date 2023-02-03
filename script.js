@@ -47,9 +47,6 @@ document.addEventListener("DOMContentLoaded", function() {
     };
 
     function getSentenceFromParagraph(p) {
-      if (p === '') {
-        return [];
-      }
       // Find sentences and account for edge cases where they end in more than one punctuation mark or in quotes or parenthetical
       // Regex pattern from James at https://stackoverflow.com/a/72280712/479663
       let sentences = p
@@ -157,9 +154,10 @@ document.addEventListener("DOMContentLoaded", function() {
       let outputArea = document.getElementById("output");
       let text = inputArea.value;
 
-      // First, remove double returns
+      // First, remove two or more line returns in a row and replace with one
       // Credit https://stackoverflow.com/questions/22962220/remove-multiple-line-breaks-n-in-javascript
       text = text.replace(/[\r\n]{2,}/g, "\n");
+      // PROBLEM: If the text input passage has two or more line returns at the very end, getSentenceFromParagraph() errors
 
       // Then break into paragraphs
       let paragraphs = text.split("\n");
