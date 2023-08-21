@@ -2,7 +2,7 @@ const exclusiveWords = [
   //[ problematic phrase, suggested replacement, explanation, source ],
   // Phrases can be presented with or without hyphens (as preferred) and will be checked with and without
   //['', '[remove/rephrase]', '', '<a href="" target="_blank"></a>'],
-  
+
   // A
   ['a blind eye', '[remove/rephrase]', 'Avoid idioms that cast a negative connotation on people’s various physical abilities', '<a href="https://advancementproject.org/resources/the-social-justice-phrase-guide/" target="_blank">Social Justice Phrase Guide</a>'],
   ['a deaf ear', '[remove/rephrase]', 'Avoid idioms that cast a negative connotation on people’s various physical abilities', '<a href="https://advancementproject.org/resources/the-social-justice-phrase-guide/" target="_blank">Social Justice Phrase Guide</a>'],
@@ -222,6 +222,7 @@ const exclusiveWords = [
   ['sold down the river', 'separated', 'Avoid this idiom that refers to enslaved people who were sold as punishment.', '<a href="https://sites.google.com/brandeis.edu/parcsuggestedlanguagelist/categories/identity-based-language?authuser=0" target="_blank">Suggested Language List from Brandeis University</a>'],
   ['spastic', '[remove/rephrase]', 'Acceptable to refer to someone as having spastic cerebral palsy, but derogatory to refer to someone as spastic.', '<a href="https://www.diversitystyleguide.com/glossary/cerebral-palsy/" target="_blank">The Diversity Style Guide</a>'],
   ['spaz', '[remove/rephrase]', 'Acceptable to refer to someone as having spastic cerebral palsy, but derogatory to refer to someone as a spaz.', '<a href="https://www.diversitystyleguide.com/glossary/cerebral-palsy/" target="_blank">The Diversity Style Guide</a>'],
+  ['spirit animal', 'Kindred spirit, reason for living, muse, or guide', 'Co-opting Native American spirituality and potentially offensive', '<a href="https://www.housing.wisc.edu/2022/10/inclusive-language-series-indigenous-terms/" target="_blank">University of Madison Inclusive Language Series</a>'],
   ['special rights', 'LGBT rights, equal rights, or gay and lesbian rights', 'Politically charged term used by opponents of civil rights for the LGBT community.', '<a href="https://www.diversitystyleguide.com/glossary/special-rights/" target="_blank">The Diversity Style Guide</a>'],
   ['special needs', 'functional needs', 'The word “special” in relationship to those with disabilities is now widely considered offensive.', '<a href="https://www.diversitystyleguide.com/glossary/specialspecial-needsfunctional-needs/" target="_blank">The Diversity Style Guide</a>'],
   // difficult to implement due to context https://www.diversitystyleguide.com/glossary/straight/
@@ -239,6 +240,7 @@ const exclusiveWords = [
   ['the opposite sex', 'other sexes', '“Other” suggests a binary, as if there are only two ways.', '<a href="https://www.theodysseyonline.com/ways-language-transgender-nonbinary-inclusive" target="_blank">7 Ways to Make Your Language More Transgender and Nonbinary Inclusive</a>, The Odyssey'],
   ['the opposite gender', 'other genders', '“Other” suggests a binary, as if there are only two ways.', '<a href="https://www.theodysseyonline.com/ways-language-transgender-nonbinary-inclusive" target="_blank">7 Ways to Make Your Language More Transgender and Nonbinary Inclusive</a>, The Odyssey'],
   ['Third World', 'developing countries', 'Casts inhabitants as uncivilized or primitive.', '<a href="https://www.diversitystyleguide.com/glossary/third-world/" target="_blank">The Diversity Style Guide</a>'],
+  ['totem pole', '[remove/rephrase]', 'Co-opting Native American spirituality and potentially offensive', '<a href="https://www.housing.wisc.edu/2022/10/inclusive-language-series-indigenous-terms/" target="_blank">University of Madison Inclusive Language Series</a>'],
   ['towel head', '[remove/rephrase]', 'Racial slur; do not use.', '<a href="https://www.diversitystyleguide.com/glossary/towelhead/" target="_blank">The Diversity Style Guide</a>'],
   ['towelhead', '[remove/rephrase]', 'Racial slur; do not use.', '<a href="https://www.diversitystyleguide.com/glossary/towelhead/" target="_blank">The Diversity Style Guide</a>'],
   ['tranny', '[remove/rephrase]', 'Offensive when used as an epithet.', '<a href="https://www.diversitystyleguide.com/glossary/tranny/" target="_blank">The Diversity Style Guide</a>'],
