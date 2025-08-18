@@ -26,7 +26,7 @@ const exclusiveWords = [
   ['appearing straight', '[remove/rephrase]', 'Visually judging the personal gender identity of an individual is deceptive and can be hurtful.', '<a href="https://www.diversitystyleguide.com/glossary/acting-appearing-gay-straight/" target="_blank">The Diversity Style Guide</a>'],
   ['appearing gay', '[remove/rephrase]', 'Visually judging the personal gender identity of an individual is deceptive and can be hurtful.', '<a href="https://www.diversitystyleguide.com/glossary/acting-appearing-gay-straight/" target="_blank">The Diversity Style Guide</a>'],
   ['Asiatic', '[remove/rephrase]', 'A vestige of European colonialism and imperialism.', '<a href="https://www.diversitystyleguide.com/glossary/asiatic/" target="_blank">The Diversity Style Guide</a>'],
-  ['autistic person', 'person with autism', 'Use people-first language.', '<a href="https://www.diversitystyleguide.com/glossary/autismautism-spectrum-disorders/" target="_blank">The Diversity Style Guide</a>'],
+  ['person with autism', 'autistic person', 'Surveys in the autistic community consistently indicate a preference for identity-first-language.', '<a href="https://www.verywellmind.com/should-you-say-person-with-autism-or-autistic-person-5235429" target="_blank">VeryWell Mind: Should You Say “Person With Autism” or “Autistic Person?”</a>'],
   // B
   // difficult to implement due to context https://www.diversitystyleguide.com/glossary/banana/
   ['bad neighborhood', '[remove/rephrase]', 'Avoid judgmental terms about neighborhoods or districts', '<a href="https://www.diversitystyleguide.com/glossary/safe-neighborhood-bad-neighborhood/" target="_blank">The Diversity Style Guide</a>'],
