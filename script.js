@@ -106,6 +106,8 @@ document.addEventListener("DOMContentLoaded", function() {
             } else {
               explainPhrase = explain + ' Consider “' + replace + '”';
             }
+            // Right now we have a problem where words in the explanation are also searched and flagged as a problematic word/phrase. Test with the word “black”
+            // Because of this, a phase like “black list” will never match because “black” is matched first
             sent = sent.slice(0, index) + `<mark class="exclusive" title="${sentenceCase(search)}: ${explainPhrase}" data-replace="${replace}" tabindex="0">${indexData}</mark>` + sent.slice(index + search.length);
             data.exclusive += 1;
             if ( source ) {
